@@ -1,0 +1,37 @@
+Connecting/working/communicating with AWS:
+      1. UI/Console (Email,password-->root, IAM UserID,Password--> IAM User)
+      2. Command Line(AWSCLI,SDKs)
+              (Access Keys)
+	      -> AWS CLI COMMANDS
+	      -> Scripting --> Shell scripting
+			   --> Power shell scripting
+			   --> Batch scripting
+			   --> Python scripting
+			           --> Using AWS CLI Commands
+				   --> Boto3 
+Localhost: Windows
+setup environment to run aws cli commands:
+==========================================
+step1: Install awscli (pip install awscli)
+Step2: Configure credentials( aws configure, export some environment variable)
+
+
+RUN AWS CLI COMMANDS:
+   aws <service>  <command> [--region us-east-1] [--output text]
+
+AWS CLI commands will give three types of outputs:
+   1. Table (Human readable purpose)
+   2. Text  (For Automation using shell-scripting)
+   3. Json  (For Automation using python-scripting)
+
+
+
+Localhost: RHEL
+================
+Step1: sudo easy_install pip  (if pip is not installed)(check using pip --version)
+Step2: sudo pip install awscli
+Step3: configure credentials
+
+
+Note: The default output format of awscli commands is json
+=====
