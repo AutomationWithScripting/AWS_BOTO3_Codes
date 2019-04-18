@@ -1,0 +1,51 @@
+Boto3: 
+======
+It is python Module/sdk/API
+It is used to interact with AWS from our localhost.
+
+pip install boto3
+pip install boto3 --upgrade
+====================================================
+AWS Management Console --> root_session, dev_session,prod_session,test_session
+
+Now you can select any requried service/s from your session
+===============================================================================
+
+Working with Ec2 Instance:
+==========================
+1. Get/Create a session of your AWS (AWS Management Console)
+2. Connect with ec2 service 
+
+import boto3
+root_session=boto3.session.Session(aws_access_key_id="AKIAITOXLWMUUVVCFMPA",aws_secret_access_key="lOUXkBh23gxo7C1uwav2g2nsT/14CNDse4P3su0G")
+ec2_con=root_session.resource('ec2',"us-east-1")
+
+1. Get/Create a session of your AWS:
+====================================
+ To create session we need programatic access keys.
+    We can provide programatic access for boto3 codes in three ways:
+      
+        1.Hardcoding the credentials
+	  root_session=boto3.session.Session(aws_access_key_id="AKIAITOXLWMUUVVCFMPA",aws_secret_access_key="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")
+	2.Using aws configure command 
+	  root_session=boto3.session.Session(profile_name="default")
+	3.Exporting programatic access keys as environment variables.
+2. Connect with ec2 service:
+============================
+        ec2_con_re=root_session.resource('ec2',"us-east-1")
+	ec2_con_cli=root_session.client('ec2','us-east-1')
+
+We can connect with your aws services from aws management console using 
+two ways:
+	1. Resource Method--> High-level method, object 
+	2. Client Method  --> Low -level method, dict,lists 
+Note: meta , it is helpful to enter into client from resource method.
+--------------------------------------------------------------------------
+
+instance_details['Monitoring']['State']
+
+------------------------------------------------------->
+
+Task for Next Session:
+=====================
+Display:  Instance_state, Instance_id,Instance_key_name,Monitoring status,Public_id,Private_id
